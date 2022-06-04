@@ -4,6 +4,7 @@ const stationStore = {
     async getStations() {
         try {
             const station1 = {
+                id: 1,
                 name: "Regensburg",
                 temperature: 123,
                 weather: 123,
@@ -12,6 +13,7 @@ const stationStore = {
             };
 
             const station2 = {
+                id: 2,
                 name: "Nittendorf",
                 temperature: 123,
                 weather: 123,
