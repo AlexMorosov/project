@@ -25,9 +25,29 @@ const stationStore = {
 
             return stations;
         } catch (e) {
-            logger.error("Error fetching playlist", e);
+            logger.error("Error fetching stations", e);
         }
-    }
+    },
+    async getStation(id) {
+        try {
+            const weatherData = {
+                temperature: 123,
+                weather: 123,
+                wind: 123,
+                pressure: 123
+            };
+
+            const station = {
+                id: id,
+                name: "Regensburg",
+                data: [weatherData, weatherData, weatherData]
+            };
+
+            return station;
+        } catch (e) {
+            logger.error("Error fetching station", e);
+        }
+    },
 };
 
 module.exports = stationStore;
