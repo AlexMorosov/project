@@ -1,5 +1,4 @@
-{{#each stations}}
-<div class="p-3 container border">
+    <div class="p-3 m-3 container border">
     <div class="row">
         <div class="col-sm">
             <div class="card" style="height: 100px; background: black;">
@@ -12,7 +11,7 @@
             <div class="card" style="height: 100px">
                 <div class="card-body">
                     <h5 class="card-title">Wetter</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{this.weather}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{this.data.0.weather}}</h6>
                 </div>
             </div>
         </div>
@@ -20,7 +19,7 @@
             <div class="card" style="height: 100px">
                 <div class="card-body">
                     <h5 class="card-title">Temperatur</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{this.temperature}} Grad</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{this.data.0.temperature}} Grad</h6>
                 </div>
             </div>
         </div>
@@ -28,7 +27,7 @@
             <div class="card" style="height: 100px">
                 <div class="card-body">
                     <h5 class="card-title">Wind</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{this.wind}} bft</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{this.data.0.wind}} bft</h6>
                 </div>
             </div>
         </div>
@@ -36,11 +35,10 @@
             <div class="card" style="height: 100px">
                 <div class="card-body">
                     <h5 class="card-title">Luftdruck</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{this.pressure}} hpa</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{this.data.0.pressure}} hpa</h6>
                 </div>
             </div>
         </div>
     </div>
-    <a href="/stations/{{this.id}}" class="card-link">Details</a>
-</div>
-{{/each}}
+    <a href="/station/{{this.id}}" class="card-link">Details</a>
+    </div>

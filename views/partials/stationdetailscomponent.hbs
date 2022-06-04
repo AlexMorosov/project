@@ -1,0 +1,64 @@
+    <div class="p-3 m-3 container border">
+    <div class="row">
+        <div class="col-sm">
+            <div class="card" style="height: 100px; background: black;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color: white">{{this.stationdetails.name}}</h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card" style="height: 100px">
+                <div class="card-body">
+                    <h5 class="card-title">Wetter</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{this.stationdetails.data.0.weather}}</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card" style="height: 100px">
+                <div class="card-body">
+                    <h5 class="card-title">Temperatur</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{this.stationdetails.data.0.temperature}} Grad</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card" style="height: 100px">
+                <div class="card-body">
+                    <h5 class="card-title">Wind</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{this.stationdetails.data.0.wind}} bft</h6>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm">
+            <div class="card" style="height: 100px">
+                <div class="card-body">
+                    <h5 class="card-title">Luftdruck</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{this.stationdetails.data.0.pressure}} hpa</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Wetter</th>
+            <th scope="col">Temperatur</th>
+            <th scope="col">Wind</th>
+            <th scope="col">Luftdruck</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each this.stationdetails.data}}
+        <tr>
+            <td>{{this.weather}}</td>
+            <td>{{this.temperature}}</td>
+            <td>{{this.wind}}</td>
+            <td>{{this.pressure}}</td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>

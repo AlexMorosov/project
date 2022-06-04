@@ -6,9 +6,17 @@ const dashboard = {
     logger.info("dashboard rendering");
 
     const stations = await stationStore.getStations();
+
+    let stationDetails = [];
+    for (const stationId of stations){
+      const station = await stationStore.getStation(stationId);
+      stationDetails.push(station);
+    }
+
+
     const viewData = {
       title: "Dashboard",
-      stations: stations,
+      stationdetails: stationDetails,
     };
     response.render("dashboard", viewData);
   }
