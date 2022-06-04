@@ -1,6 +1,6 @@
 const logger = require("../utils/logger.js");
 
-const about = {
+const dashboard = {
   index(request, response) {
     logger.info("dashboard rendering");
     const viewData = {
@@ -10,4 +10,4 @@ const about = {
   }
 };
 
-module.exports = about;
+module.exports = dashboard;
