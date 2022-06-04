@@ -8,7 +8,7 @@ const station = {
 
         const viewData = {
             title: "Station",
-            station: station,
+            stationdetails: station,
         };
         response.render("station", viewData);
     }

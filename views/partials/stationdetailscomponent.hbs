@@ -3,7 +3,7 @@
         <div class="col-sm">
             <div class="card" style="height: 100px; background: black;">
                 <div class="card-body">
-                    <h5 class="card-title" style="color: white">{{this.name}}</h5>
+                    <h5 class="card-title" style="color: white">{{this.stationdetails.name}}</h5>
                 </div>
             </div>
         </div>
@@ -11,7 +11,7 @@
             <div class="card" style="height: 100px">
                 <div class="card-body">
                     <h5 class="card-title">Wetter</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{this.data.0.weather}}</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{this.stationdetails.data.0.weather}}</h6>
                 </div>
             </div>
         </div>
@@ -19,7 +19,7 @@
             <div class="card" style="height: 100px">
                 <div class="card-body">
                     <h5 class="card-title">Temperatur</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{this.data.0.temperature}} Grad</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{this.stationdetails.data.0.temperature}} Grad</h6>
                 </div>
             </div>
         </div>
@@ -27,7 +27,7 @@
             <div class="card" style="height: 100px">
                 <div class="card-body">
                     <h5 class="card-title">Wind</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{this.data.0.wind}} bft</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{this.stationdetails.data.0.wind}} bft</h6>
                 </div>
             </div>
         </div>
@@ -35,10 +35,9 @@
             <div class="card" style="height: 100px">
                 <div class="card-body">
                     <h5 class="card-title">Luftdruck</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">{{this.data.0.pressure}} hpa</h6>
+                    <h6 class="card-subtitle mb-2 text-muted">{{this.stationdetails.data.0.pressure}} hpa</h6>
                 </div>
             </div>
         </div>
     </div>
-    <a href="/station/{{this.id}}" class="card-link">Details</a>
     </div>
