@@ -1,13 +1,17 @@
 const logger = require("../utils/logger.js");
+const stationStore = require("../models/station-store.js");
 
-const about = {
-  index(request, response) {
+const dashboard = {
+  async index(request, response) {
     logger.info("dashboard rendering");
+
+    const stations = await stationStore.getStations();
     const viewData = {
-      title: "Dashboard"
+      title: "Dashboard",
+      stations: stations,
     };
     response.render("dashboard", viewData);
   }
 };
 
-module.exports = about;
+module.exports = dashboard;

@@ -6,6 +6,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 const app = express();
+app.use(express.static("public"));
 
 app.engine('.hbs', handlebars.engine({extname: '.hbs'}));
 app.set('view engine', '.hbs');
