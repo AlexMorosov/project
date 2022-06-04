@@ -41,3 +41,24 @@
         </div>
     </div>
     </div>
+
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Wetter</th>
+            <th scope="col">Temperatur</th>
+            <th scope="col">Wind</th>
+            <th scope="col">Luftdruck</th>
+        </tr>
+        </thead>
+        <tbody>
+        {{#each this.stationdetails.data}}
+        <tr>
+            <td>{{this.weather}}</td>
+            <td>{{this.temperature}}</td>
+            <td>{{this.wind}}</td>
+            <td>{{this.pressure}}</td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
