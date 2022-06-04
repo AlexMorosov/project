@@ -7,7 +7,7 @@ const station = {
         const station = await stationStore.getStation(stationId);
 
         const viewData = {
-            title: "Dashboard",
+            title: "Station",
             station: station,
         };
         response.render("station", viewData);
