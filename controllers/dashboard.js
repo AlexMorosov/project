@@ -1,10 +1,14 @@
 const logger = require("../utils/logger.js");
+const stationStore = require("../models/station-store.js");
 
 const dashboard = {
-  index(request, response) {
+  async index(request, response) {
     logger.info("dashboard rendering");
+
+    const stations = await stationStore.getStations();
     const viewData = {
-      title: "Dashboard"
+      title: "Dashboard",
+      stations: stations,
     };
     response.render("dashboard", viewData);
   }
