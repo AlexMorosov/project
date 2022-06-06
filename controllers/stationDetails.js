@@ -1,11 +1,10 @@
 const logger = require("../utils/logger.js");
-const stationStore = require("../models/station-store.js");
+const stationDetailsStore = require("../models/StationDetails-store.js");
 
-
-const station = {
+const stationDetails = {
     async index(request, response) {
         const stationId = request.params.id;
-        const station = await stationStore.getStation(stationId);
+        const station = await stationDetailsStore.getStationDetails();
         const viewData = {
             title: "Station",
             stationdetails: station,
@@ -14,4 +13,4 @@ const station = {
     }
 };
 
-module.exports = station;
+module.exports = stationDetails;

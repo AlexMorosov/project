@@ -25,8 +25,8 @@ const stationStore = {
                 pressure: 123
             };
             const station = {
-                id: id,
-                data: [weatherData, weatherData, weatherData]
+                id:id.title
+
             };
             return station;
         } catch (e) {

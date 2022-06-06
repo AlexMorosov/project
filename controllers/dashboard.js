@@ -6,14 +6,9 @@ const dashboard = {
   async index (request, response) {
     logger.info("dashboard rendering");
 
+    const stationDetails = await stationDetailsStore.getStationDetails();
     const stations = await stationStore.getStations();
 
-
-    let stationDetails = [];
-    for (const stationId of stations) {
-      const station = await stationStore.getStation(stationId);
-      stationDetails.push(station);
-    }
 
     const viewData = {
       title: "Dashboard",
