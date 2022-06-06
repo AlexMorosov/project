@@ -1,12 +1,16 @@
+const dataStore = require("./data-store.js");
+const dataStoreClient = dataStore.getDataStore();
 const logger = require("../utils/logger.js");
+const {warn} = require("winston");
 
 const stationStore = {
     async getStations() {
+        const query = 'SELECT * FROM playlist2_playlists';
         try {
 
-            let stations = [1, 2];
+            let result = await dataStoreClient.query(query) ;
 
-            return stations;
+            return result.rows;
         } catch (e) {
             logger.error("Error fetching stations", e);
         }
@@ -20,13 +24,10 @@ const stationStore = {
                 wind: 123,
                 pressure: 123
             };
-
             const station = {
                 id: id,
-                name: "Regensburg",
                 data: [weatherData, weatherData, weatherData]
             };
-
             return station;
         } catch (e) {
             logger.error("Error fetching station", e);
