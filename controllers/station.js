@@ -1,6 +1,6 @@
 const logger = require("../utils/logger.js");
 const stationStore = require("../models/station-store.js");
-
+const stationDetailsStore = require("../models/StationDetails-store.js");
 
 const station = {
     async index(request, response) {

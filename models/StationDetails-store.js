@@ -10,7 +10,7 @@ const stationDetailsStore = {
 
             let result = await dataStoreClient.query(query) ;
 
-            return result.rows;
+            return result.columns;
         } catch (e) {
             logger.error("Error fetching stationDetails", e);
         }
