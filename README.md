@@ -1,6 +1,6 @@
 # web-app-template-1
 
-# Release 1
+# Release 3
 
 A starter project for a web application.
 
