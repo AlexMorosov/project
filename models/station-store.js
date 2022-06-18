@@ -5,28 +5,25 @@ const dataStoreClient = dataStore.getDataStore();
 const stationStore = {
     async getStations() {
         try {
-            const weatherData = {
-                id: 1, // PK
-                stationId: 1, // FK
-                temperature: 123,
-                weather: 123,
-                wind: 123,
-                pressure: 123
-            };
+            const query = 'SELECT * FROM stations';
+            let result = await dataStoreClient.query(query);
 
-            const station1 = {
-                id: 1, // PK
-                name: "Regensburg", // Unique
-                data: [weatherData, weatherData, weatherData]
-            };
+            let stations = [];
+            for(let item of result.rows){
+                let station = item;
+                let data = [];
 
-            const station2 = {
-                id: 2, // PK
-                name: "Nittendorf", // Unique
-                data: [weatherData, weatherData, weatherData]
-            };
+                const weatherQuery = 'SELECT * FROM weatherdata WHERE stationid=$1';
+                const weatherValues = [item.id];
+                let weatherResult = await dataStoreClient.query(weatherQuery, weatherValues);
 
-            let stations = [station1, station2];
+                for(let item of weatherResult.rows){
+                    data.push(item);
+                }
+
+                station.data = data;
+                stations.push(station);
+            }
 
             return stations;
         } catch (e) {
