@@ -7,16 +7,9 @@ const dashboard = {
 
     const stations = await stationStore.getStations();
 
-    let stationDetails = [];
-    for (const stationId of stations){
-      const station = await stationStore.getStation(stationId);
-      stationDetails.push(station);
-    }
-
-
     const viewData = {
       title: "Dashboard",
-      stationdetails: stationDetails,
+      stationdetails: stations,
     };
     response.render("dashboard", viewData);
   }
