@@ -9,4 +9,7 @@ router.get("/", home.index);
 router.get("/dashboard", dashboard.index);
 router.get("/station/:id", station.index);
 
+router.post('/station/:id/addMeasuring', dashboard.addMeasuring);
+router.post('/dashboard/addStation',dashboard.addStation);
+
 module.exports = router;
