@@ -50,28 +50,7 @@ const stationStore = {
         } catch (e) {
             logger.error("Error fetching station", e);
         }
-    },
-    async addMeasuring(stationId, newMeasuring) {
-        const query = 'INSERT INTO weatherdata (WEATHER, TEMPERATURE, WIND, PRESSURE, this.id) VALUES($1, $2, $3, $4, $5)';
-        const values = [newMeasuring.weather, newMeasuring.temperature, newMeasuring.wind,newMeasuring.pressure, stationId];
-
-        try {
-            await dataStoreClient.query(query, values);
-        } catch (e) {
-            logger.error("Error adding Measuring", e);
-        }
-    },
-    async addStation(stationId, newStation) {
-        const query = 'INSERT INTO stations (NAME, LAT, LON) VALUES($1, $2, $3)';
-        const values = [newStation.name, newStation.lat, newStation.lon];
-
-        try {
-            await dataStoreClient.query(query, values);
-        } catch (e) {
-            logger.error("Error adding Station", e);
-        }
     }
 };
-
 
 module.exports = stationStore;
