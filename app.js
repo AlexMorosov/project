@@ -1,6 +1,7 @@
 const express = require("express");
 const logger = require("./utils/logger");
 const handlebars = require("express-handlebars");
+const bodyParser = require("body-parser");
 
 const dotenv = require("dotenv");
 dotenv.config();
@@ -14,6 +15,7 @@ app.set('views', './views');
 
 const routes = require("./routes");
 app.use("/", routes);
+app.use(bodyParser.urlencoded({ extended: false }));
 
 app.listen(process.env.PORT, () => {
     console.log(`Web App template listening on ${process.env.PORT}`);
